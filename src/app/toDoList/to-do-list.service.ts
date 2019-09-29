@@ -40,7 +40,7 @@ export class ToDoListService {
   }
   deleteItem(item: ListItem) {
     const index = this.itemslist.indexOf(item);
-    return this.http.delete('http://localhost:3000/api/items/' + item.id).subscribe(res => {
+    return this.http.delete('https://to-do-list95.herokuapp.com/api/items/' + item.id).subscribe(res => {
       this.itemslist.splice(index, 1);
       this.itemsUpdated.next([...this.itemslist]);
 
