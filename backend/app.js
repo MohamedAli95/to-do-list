@@ -23,10 +23,10 @@ app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Methods","GET,PATCH,PUT,POST,DELETE ,OPTIONS");
   next();
 });
-app.use("/",express.static(path.join(__dirname,"/To-do-list-app")));
+app.use("/",express.static(path.join(__dirname,"./To-do-list-app")));
 app.use('/api/items',itemRoutes);
 app.use('/api/user',userRoutes);
 app.use((req,res, next)=>{
-  res.sendFile(__dirname,"To-do-list-app","/To-do-list-app/index.html");
+  res.sendFile(__dirname,"To-do-list-app","./To-do-list-app/index.html");
 })
 module.exports = app;
