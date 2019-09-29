@@ -1,0 +1,16 @@
+<div class="container">
+    <H1 style=" text-align: center">SignUp</H1>
+    <form (submit)="onsignup(signupForm)" #signupForm="ngForm" class="needs-validation">
+      <div class="form-group">
+        <label>Email address</label>
+        <input ngModel name="email" type="email" class="form-control" #emailInput="ngModel"  placeholder="Enter email" required email>
+        <mat-error *ngIf="password.invalid">Please enter a Valid E-Mail.</mat-error>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input ngModel name="password" type="password" class="form-control"  placeholder="Password" #password='ngModel' required>
+        <mat-error *ngIf="password.invalid">Please enter a Valid Password.</mat-error>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

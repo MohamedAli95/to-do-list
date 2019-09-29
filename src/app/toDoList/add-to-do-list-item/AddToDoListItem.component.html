@@ -1,0 +1,14 @@
+<div class="form-group">
+  <h1 class="text-center">To-Do <small>List</small></h1>
+<form  (submit)="onItemCreate(CreateForm)" #CreateForm="ngForm">
+    <div class="form-row">
+      <div class="col">
+    <input type="text" ngModel class="form-control" placeholder="Your Task" name="item" required>
+    </div>
+    <div class="col">
+        <button type="submit" class="btn btn btn-primary">Add</button>
+    </div>
+    </div>
+</form>
+
+    </div>

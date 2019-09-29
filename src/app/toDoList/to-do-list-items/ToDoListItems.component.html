@@ -1,0 +1,13 @@
+<app-add-to-do-list-item *ngIf="userIsAuth"></app-add-to-do-list-item>
+<div class="container" *ngIf="itemList.length > 0 && userIsAuth" >
+  <div class="row"  *ngFor="let item of itemList">
+    <div class="col-6"><p> {{item.content}} </p></div>
+    <div class="col-6"><button (click)="deleteItem(item)" type="button" class="btn btn-primary">Finshed</button></div>
+  </div>
+
+</div>
+
+<div class="container" *ngIf="!userIsAuth">
+  <h1 class="text-center">To-Do <small>List</small></h1>
+  <h3>Please Login to Use The application</h3>
+</div>
