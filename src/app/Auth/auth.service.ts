@@ -26,7 +26,7 @@ export class AuthService {
   }
   createUser(email: string, password: string) {
     const authData: AuthData = { email, password };
-    return this.http.post('http://localhost:3000/api/user' + '/signup', authData)
+    return this.http.post('https://to-do-list95.herokuapp.com/api/user' + '/signup', authData)
       .subscribe(Response => {
         this.router.navigate(['auth/login']);
       });
@@ -34,7 +34,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     const authData: AuthData = { email, password };
-    this.http.post<{ token: string, expiresIn: number, userId: string }>('http://localhost:3000/api/user' + '/login', authData)
+    this.http.post<{ token: string, expiresIn: number, userId: string }>('https://to-do-list95.herokuapp.com/api/user' + '/login', authData)
       .subscribe(Response => {
         this.token = Response.token;
         if (this.token) {
